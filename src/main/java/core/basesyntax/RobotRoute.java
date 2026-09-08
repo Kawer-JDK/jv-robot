@@ -5,5 +5,42 @@ public class RobotRoute {
     if (toX == robot.getX() && toY == robot.getY()) {
         System.out.println("Robot is on right place");
     }
+
+    if (toX > robot.getX()) {
+        while (robot.getDirection() != Direction.RIGHT) {
+            robot.turnRight();
+        }
+        while (robot.getX() < toX) {
+            robot.stepForward();
+        }
+    }
+    else if (toX < robot.getX()) {
+        while (robot.getDirection() != Direction.LEFT) {
+            robot.turnLeft();
+        }
+        while (robot.getX() > toX) {
+            robot.stepForward();
+        }
+    }
+
+
+
+    if (toY > robot.getY()) {
+        while (robot.getDirection() != Direction.UP) {
+            robot.turnLeft();
+        }
+        while (robot.getY() < toY) {
+            robot.stepForward();
+        }
+    }
+    else if (toY < robot.getY()) {
+        while (robot.getDirection() != Direction.DOWN) {
+            robot.turnRight();
+        }
+        while (robot.getY() > toY) {
+            robot.stepForward();
+        }
+    }
+
     }
 }
